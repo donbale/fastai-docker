@@ -1,4 +1,4 @@
-# Docker Images for fast.ai course
+# DockerFile to build image for fast.ai course
 
 In preperation for the realease of fastai v2 and the new course, released on August 21st 2020, I am preparing these images for my own use and sharing them in case anbody else want them.
 
