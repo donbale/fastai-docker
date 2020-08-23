@@ -40,56 +40,26 @@ RUN pip3.7 install -U setuptools
 RUN ln -s /usr/bin/python3.7 /usr/bin/python 
 RUN ln -s /usr/bin/pip3.7 /usr/bin/pip 
 
-RUN pip install -U \
-    pyyaml \
-    scipy \
-    ipython \
-    mkl \
-    mkl-include \
-    cython 
-
-RUN pip install pandas \
-        numpy \
-        keras \
-        sklearn \
-        "torch==1.4" \
-        "torchvision==0.5.0"
-
 # fastai
 
-RUN pip install -U \
-    bs4 \
-    fastprogress \
-    matplotlib \
-    bottleneck \
-    fastai \
-    numexpr \
-    nvidia-ml-py3 \
-    packaging \
-    pillow \
-    requests \
-    scipy \
-    spacy \
-    jupyter \
-    jupyterlab \
-    nbconvert \
-    nbformat \
-    traitlets
+RUN pip install fastai>=0.0.11 \
+	graphviz \
+	ipywidgets \
+	matplotlib \
+	nbdev>=0.2.12 \
+	pandas \
+	scikit_learn \
+	azure-cognitiveservices-search-imagesearch \
+	sentencepiece
 
-# install jupyter notebook
-
-
-# Set up our notebook config.
+# Install jupyter notebook and set up our notebook config.
 RUN pip install \
     jupyterlab \
     notebook \
-    ipywidgets \
     jupyter_http_over_ws \
     jupyter_contrib_nbextensions	
 
-
 RUN jupyter serverextension enable --py jupyter_http_over_ws
-
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
