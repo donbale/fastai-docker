@@ -43,20 +43,19 @@ RUN ln -s /usr/bin/pip3.7 /usr/bin/pip
 # fastai
 
 RUN pip install fastai>=0.0.11 \
-	graphviz
-	ipywidgets
-	matplotlib
-	nbdev>=0.2.12
-	pandas
-	scikit_learn
-	azure-cognitiveservices-search-imagesearch
+	graphviz \
+	ipywidgets \
+	matplotlib \
+	nbdev>=0.2.12 \
+	pandas \
+	scikit_learn \
+	azure-cognitiveservices-search-imagesearch \
 	sentencepiece
 
 # Install jupyter notebook and set up our notebook config.
 RUN pip install \
     jupyterlab \
     notebook \
-    ipywidgets \
     jupyter_http_over_ws \
     jupyter_contrib_nbextensions	
 
